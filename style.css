@@ -35,14 +35,14 @@ body {
   display: grid;
   place-items: center;
   gap: 1rem;
-  max-width: 80%;
+  min-width: 80%;
   padding: 2rem;
   background-color: rgb(33, 96, 173, 0.4);
   box-shadow: 0 0 8rem rgba(0, 0, 0, 0.7);
 }
 
 .app-container .app-password-field {
-  font-size: 2.4rem;
+  font-size: 2.1rem;
   font-weight: 900;
   color: rgb(59, 141, 129);
   margin-bottom: 1.4rem;
@@ -72,9 +72,6 @@ body {
 
 .checkbox-label:last-of-type {
   margin-bottom: 3rem;
-}
-
-#slider-character-count {
 }
 
 input[type="range"] {
