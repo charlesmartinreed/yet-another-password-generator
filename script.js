@@ -2,6 +2,7 @@ const characterCountSpan = document.getElementById("slider-character-count");
 const characterCountSlider = document.getElementById("slider-character");
 const passwordFieldEl = document.querySelector(".app-password-field");
 const generatePasswordButton = document.getElementById("generate-button");
+const copyContentsEl = document.querySelector(".copy-contents");
 
 let checkboxUppercase = document.getElementById("checkbox-uppercase");
 let checkboxNumbers = document.getElementById("checkbox-numbers");
@@ -18,11 +19,7 @@ const UPPERCASE_CHAR_CODES = generateArrayFrom(65, 90);
 const LOWERCASE_CHAR_CODES = generateArrayFrom(97, 122);
 
 characterCountSlider.addEventListener("change", e => {
-  if (e.target.value === "1") {
-    characterCountSpan.textContent = `${e.target.value} character`;
-  } else {
-    characterCountSpan.textContent = `${e.target.value} characters`;
-  }
+  characterCountSpan.textContent = `${e.target.value}`;
 });
 
 generatePasswordButton.addEventListener("click", () => {
@@ -75,6 +72,26 @@ function generateNewPassword(charCount, hasUppercase, hasNumbers, hasSymbols) {
   return passwordCharacters.join("");
 }
 
+function copyToClipboard(password) {
+  const el = document.createElement("textarea");
+  el.value = password;
+  document.body.appendChild(el);
+  el.select();
+  document.execCommand("copy");
+  document.body.removeChild(el);
+
+  copyContentsEl.classList.add("copy-successful");
+
+  setTimeout(() => {
+    copyContentsEl.classList.remove("copy-successful");
+  }, 5000);
+}
+
+// CLIPBOARD COPYING
+passwordFieldEl.addEventListener("click", e =>
+  copyToClipboard(e.target.textContent)
+);
+
 window.addEventListener("load", () => {
-  characterCountSpan.textContent = `${characterCountSlider.value} characters`;
+  characterCountSpan.textContent = `${characterCountSlider.value}`;
 });

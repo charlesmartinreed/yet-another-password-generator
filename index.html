@@ -9,17 +9,19 @@
     <title>Maximum Security</title>
   </head>
   <body>
+    <div class="copy-contents">Copied!</div>
     <div class="app-container">
       <h1 class="app-password-field">Maximum Security</h1>
 
-      <label for="slider-character">
-        <span id="slider-character-count"></span>
+      <label for="slider-character" id="slider-text">
+        <span id="slider-character-count"></span> characters
       </label>
       <input
         type="range"
         name="slider-character"
         id="slider-character"
         max="20"
+        min="6"
         value="8"
       />
 

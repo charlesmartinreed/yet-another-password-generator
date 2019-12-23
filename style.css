@@ -52,14 +52,43 @@ body {
   word-break: break-all;
 }
 
-.app-container .app-password-field::after {
-  /* content: "";
+.copy-contents {
   position: absolute;
-  bottom: -12%;
-  left: -5%;
-  width: 50%;
-  background-color: rgb(59, 141, 129);
-  height: 4px; */
+  top: 15%;
+  right: 50%;
+  transform: translateX(50%);
+  padding: 6px 20px;
+  background-color: rgba(184, 137, 19, 0.4);
+  color: rgb(32, 32, 32);
+  font-size: 1.1rem;
+  font-weight: 500;
+  opacity: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.06rem;
+}
+
+.copy-contents.copy-successful {
+  animation-name: inAndUp;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-direction: forwards;
+}
+
+@keyframes inAndUp {
+  0% {
+    opacity: 0;
+    transform: translateX(50%);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateX(50%) translateY(-50%);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(50%) translateY(-75%);
+  }
 }
 
 .checkbox-label {
@@ -69,6 +98,11 @@ body {
 
   position: relative;
   cursor: pointer;
+}
+
+#slider-text {
+  font-weight: 200;
+  letter-spacing: 0.06rem;
 }
 
 .checkbox-label:last-of-type {
@@ -101,8 +135,9 @@ input[type="checkbox"] {
 }
 
 #slider-character-count {
-  font-size: 1.6rem;
-  font-weight: 200;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: rgb(59, 141, 129);
 }
 
 .checkbox-custom {
