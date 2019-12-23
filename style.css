@@ -6,6 +6,11 @@
   box-sizing: border-box;
 }
 
+:root {
+  /* -moz-appearance: checkbox; */
+  /* -webkit-appearance: checkbox; */
+}
+
 body {
   min-height: 100vh;
   display: grid;
@@ -30,31 +35,102 @@ body {
   display: grid;
   place-items: center;
   gap: 1rem;
-  width: 90%;
+  max-width: 80%;
+  padding: 2rem;
+  background-color: rgb(33, 96, 173, 0.4);
+  box-shadow: 0 0 8rem rgba(0, 0, 0, 0.7);
 }
 
-.app-container .app-title {
-  font-size: 2.7rem;
-  font-weight: 300;
+.app-container .app-password-field {
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: rgb(59, 141, 129);
+  margin-bottom: 1.4rem;
+
+  transition: all 0.3s ease-in-out;
+  position: relative;
 }
 
-label {
-  font-size: 0.9rem;
+.app-container .app-password-field::after {
+  /* content: "";
+  position: absolute;
+  bottom: -12%;
+  left: -5%;
+  width: 50%;
+  background-color: rgb(59, 141, 129);
+  height: 4px; */
+}
+
+.checkbox-label {
+  font-size: 1.3rem;
   font-weight: 200;
   letter-spacing: 0.08rem;
+
+  position: relative;
+  cursor: pointer;
+}
+
+.checkbox-label:last-of-type {
+  margin-bottom: 3rem;
+}
+
+#slider-character-count {
+}
+
+input[type="range"] {
+  margin-top: -0.5rem;
+  margin-bottom: 2rem;
+  width: 60%;
 }
 
 input[type="submit"] {
   border: none;
   background: #1b4477;
-  /* color: rgb(228, 228, 245); */
   color: #bdbdbd;
   border-radius: 3px;
   padding: 0.8rem 2rem;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+
+  transition: transform 0.1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  outline: none;
+}
+
+input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
   cursor: pointer;
 }
 
 #slider-character-count {
-  font-weight: 600;
+  font-size: 1.6rem;
+  font-weight: 200;
+}
+
+.checkbox-custom {
+  position: absolute;
+  top: 0%;
+  left: -5%;
+  bottom: 0%;
+  right: 0%;
+  height: 130%;
+  width: 110%;
+  background-color: transparent;
+
+  transition: transform 0.2s linear;
+  transform-origin: bottom right;
+  transform: scale(0);
+}
+
+/* UNCHECKED */
+
+/* CHECKED */
+input:checked ~ .checkbox-custom {
+  transform: scale(1);
+  border-bottom: 5px solid rgba(59, 141, 129, 0.6);
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+  transform: scale(1.02);
 }

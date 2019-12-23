@@ -10,10 +10,10 @@
   </head>
   <body>
     <div class="app-container">
-      <h1 class="app-title">Maximum Security</h1>
+      <h1 class="app-password-field">Maximum Security</h1>
 
       <label for="slider-character">
-        <span id="slider-character-count"></span> Characters
+        <span id="slider-character-count"></span>
       </label>
       <input
         type="range"
@@ -23,24 +23,27 @@
         value="8"
       />
 
-      <label for="checkbox-uppercase">
+      <label class="checkbox-label" for="checkbox-uppercase">
         Include Uppercase
+        <input
+          type="checkbox"
+          name="checkbox-uppercase"
+          id="checkbox-uppercase"
+        />
+        <div class="checkbox-custom"></div>
       </label>
-      <input
-        type="checkbox"
-        name="checkbox-uppercase"
-        id="checkbox-uppercase"
-      />
 
-      <label for="checkbox-numbers">
+      <label class="checkbox-label" for="checkbox-numbers">
         Include Numbers
+        <input type="checkbox" name="checkbox-numbers" id="checkbox-numbers" />
+        <div class="checkbox-custom"></div>
       </label>
-      <input type="checkbox" name="checkbox-numbers" id="checkbox-numbers" />
 
-      <label for="checkbox-symbols">
+      <label class="checkbox-label" for="checkbox-symbols">
         Include Symbols
+        <input type="checkbox" name="checkbox-symbols" id="checkbox-symbols" />
+        <div class="checkbox-custom"></div>
       </label>
-      <input type="checkbox" name="checkbox-symbols" id="checkbox-symbols" />
 
       <input type="submit" value="Generate Password" />
     </div>
