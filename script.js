@@ -55,10 +55,6 @@ function generateNewPassword(charCount, hasUppercase, hasNumbers, hasSymbols) {
   // default to lowercase
 
   let charCodes = LOWERCASE_CHAR_CODES;
-  console.log(charCodes, "lowercase codes");
-  console.log(hasUppercase);
-  console.log(hasNumbers);
-  console.log(hasSymbols);
 
   //   get an array of all the possible characters for the generated password
   if (hasUppercase) charCodes = charCodes.concat(UPPERCASE_CHAR_CODES);
@@ -76,7 +72,6 @@ function generateNewPassword(charCount, hasUppercase, hasNumbers, hasSymbols) {
     passwordCharacters.push(character);
   }
 
-  console.log(passwordCharacters);
   return passwordCharacters.join("");
 }
 
